@@ -5,6 +5,10 @@ from ball import Ball
 
 update_underlying = True
 image = None
+NO_BALL = 0
+SMALL_BALL = 1
+LARGE_BALL = 2
+selected_item = SMALL_BALL
 
 
 def init():
