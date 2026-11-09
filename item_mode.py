@@ -3,7 +3,7 @@ from pico2d import *
 import game_world
 from ball import Ball
 
-update_underlying = True
+update_underlying = False
 image = None
 NO_BALL = 0
 SMALL_BALL = 1
