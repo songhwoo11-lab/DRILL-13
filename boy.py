@@ -7,6 +7,7 @@ from transitions import Machine
 
 import game_world
 from ball import Ball
+import item_mode
 
 
 class Boy:
@@ -47,7 +48,15 @@ class Boy:
         self.frame = 0
 
     def fire_ball(self):
-        ball = Ball(self.x, self.y, self.face_dir * 10)
+        if item_mode.selected_item == item_mode.NO_BALL:
+            return
+
+        image_filename = (
+            'ball21x21.png'
+            if item_mode.selected_item == item_mode.SMALL_BALL
+            else 'ball41x41.png'
+        )
+        ball = Ball(self.x, self.y, self.face_dir * 10, image_filename)
         game_world.add_oject(ball)
 
     def handle_event(self, event):
