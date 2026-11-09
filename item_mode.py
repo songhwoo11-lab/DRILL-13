@@ -45,6 +45,14 @@ def handle_events():
                         game_world.remove_object(obj)
             game_framework.pop_mode()
             return
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_1:
+            selected_item = SMALL_BALL
+            game_framework.pop_mode()
+            return
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_2:
+            selected_item = LARGE_BALL
+            game_framework.pop_mode()
+            return
         elif event.type == SDL_KEYDOWN and event.key == SDLK_i:
             game_framework.pop_mode()
             return
