@@ -33,10 +33,12 @@ def render():
 
 
 def handle_events():
+    global selected_item
     for event in get_events():
         if event.type == SDL_QUIT:
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_0:
+            selected_item = NO_BALL
             for layer in game_world.world:
                 for obj in layer[:]:
                     if isinstance(obj, Ball):
